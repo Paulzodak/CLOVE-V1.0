@@ -1,5 +1,4 @@
 import React from "react";
-import { Item } from "semantic-ui-react";
 import { Card } from "../UI/Card.styled";
 import Dialog from "@mui/material/Dialog";
 import Slide from "@mui/material/Slide";

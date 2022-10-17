@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "../../UI/Card.styled";
 import cloveLogo from "../../../IMAGES/ICONS/cloveLogo.svg";
 import { ImageCard } from "../../../components/UI/ImageCard.styled";
-import messageIcon from "../../../IMAGES/Icons/messageIcon.svg";
+import messageIcon from "../../../IMAGES/ICONS/messageIcon.svg";
 import dialerIcon from "../../../IMAGES/ICONS/dialerIcon.svg";
 import { CardSpan } from "../../UI/CardSpan.styled";
 import Image from "next/image";
