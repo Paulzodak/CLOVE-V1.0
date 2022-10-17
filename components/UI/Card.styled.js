@@ -1,7 +1,11 @@
 import styled from "styled-components";
 export const Card = styled.div`
+  border-right: ${(props) => props.bdrt};
+  align-content: ${(props) => props.gridac};
+  column-gap: ${(props) => props.gridcgap};
   font-weight: ${(props) => props.fw};
   justify-content: ${(props) => props.gridjc};
+
   backdrop-filter: ${(props) => props.bdft};
   float: ${(props) => props.float};
   line-height: ${(props) => props.lh};
@@ -38,11 +42,17 @@ export const Card = styled.div`
   z-index: ${(props) => props.zindex};
 
   &:hover {
+    top: ${(props) => props.hvpstp};
+    right: ${(props) => props.hvpsrt};
+    bottom: ${(props) => props.hvpsbt};
+    left: ${(props) => props.hvpslf};
     color: ${(props) => props.hvcl};
     border: ${(props) => props.hvbd};
     background-color: ${(props) => props.hvbg};
     font-size: ${(props) => props.hvfs};
     height: ${(props) => props.hvheight};
     width: ${(props) => props.hvwidth};
+
+    backdrop-filter: ${(props) => props.hvbdft};
   }
 `;

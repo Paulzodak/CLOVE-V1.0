@@ -41,6 +41,7 @@ export const InputCard = styled.input`
     position: ${(props) => props.phps};
     top: ${(props) => props.phtp};
     left: ${(props) => props.phlt};
+    color: ${(props) => props.phcl};
   }
   &:hover {
     color: ${(props) => props.hvcl};
