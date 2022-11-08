@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Card } from "../../UI/Card.styled";
 import { Button } from "../../UI/Button.styled";
-import gamePad from "../../../IMAGES/gamePad.svg";
+import gamePad from "../../../IMAGES/sonyGamePad.svg";
 import Image from "next/image";
 import { ImageCard } from "../../UI/ImageCard.styled";
 import LinearBar from "./LinearLoad";

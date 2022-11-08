@@ -9,7 +9,9 @@ const SectionOne = () => {
     <Card
       //   width={"100vw"}
       // height={"25rem"}
-      mg={"1rem"}
+      mg={"1rem 1rem 1rem 1rem"}
+      ps={"relative"}
+      pstp={"1rem"}
       // bd={"1px solid red"}
       dp={"grid"}
       gridC={"auto auto auto"}
