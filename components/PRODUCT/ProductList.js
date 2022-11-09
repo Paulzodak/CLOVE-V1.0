@@ -18,7 +18,11 @@ const ProductList = ({ filter, productsListProps }) => {
       {productsListProps.products.map((item) => {
         if (eval(productsListProps.filter)) {
           return (
-            <ProductItem item={item} productItemProps={productItemProps} />
+            <ProductItem
+              key={item.id}
+              item={item}
+              productItemProps={productItemProps}
+            />
           );
         }
       })}

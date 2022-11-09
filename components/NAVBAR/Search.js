@@ -1,6 +1,12 @@
 import React from "react";
 import { InputCard } from "../UI/Input.styled";
+import { useDispatch } from "react-redux";
+import { setSearchMode } from "../redux/ui";
 const Search = () => {
+  const dispatch = useDispatch();
+  const focusHandler = () => {
+    dispatch(setSearchMode({ searchMode: true }));
+  };
   return (
     <InputCard
       height={"80%"}
@@ -13,6 +19,7 @@ const Search = () => {
       fs={"0.8rem"}
       pd={"0 2rem "}
       phcl={"white"}
+      onFocus={focusHandler}
     ></InputCard>
   );
 };

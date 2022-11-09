@@ -21,7 +21,6 @@ const SectionThree = ({ products }) => {
     header: "Most Popular",
     filter: filter,
   };
-  console.log(products);
   return (
     <section>
       <Card

@@ -44,7 +44,7 @@ const Categories = () => {
     >
       <Card bd={"0px solid red"}>
         {categories.map((item) => {
-          return <CategoryItem item={item} />;
+          return <CategoryItem key={item.id} item={item} />;
         })}
       </Card>
     </Card>

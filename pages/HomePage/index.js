@@ -7,25 +7,19 @@ import SectionThree from "../../components/SECTIONTHREE/SectionThree";
 import SectionFour from "../../components/SECTIONFOUR/SectionFour";
 import SectionSix from "../../components/SECTIONSIX/SectionSix";
 import { useState, useEffect } from "react";
+import { useDetectScroll } from "@smakss/react-scroll-direction";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setSearchMode } from "../../components/redux/ui";
 
 const Index = () => {
   const [products, setProducts] = useState([]);
-  const [show, setShow] = useState(true);
-  const controlBar = () => {
-    if (window.scrollY > 100) {
-      setShow(false);
-    } else {
-      setShow(true);
-    }
+  const searchMode = useSelector((state) => state.ui.searchMode);
+  console.log(searchMode);
+  const dispatch = useDispatch();
+  const searchModeHandler = () => {
+    dispatch(setSearchMode({ searchMode: false }));
   };
-  useEffect(() => {
-    window.addEventListener("scroll", controlBar);
-    return () => {
-      window.removeEventListener("scroll", controlBar);
-    };
-  }, []);
-  // console.log(window.scrollY);
-  console.log(show);
   useEffect(() => {
     // axios.get(`${BASEURL}/Products`).then((res) => {
     //   setProducts(res.data);
@@ -147,15 +141,26 @@ const Index = () => {
     ]);
   }, []);
 
-  return (
-    <>
-      <Card font={"'Poppins', sans-serif"} height={"100rem"} width={"100vw"}>
-        <Navbar />
+  const rendered = () => {
+    return (
+      <>
         <SectionOne />
         <SectionTwo />
         <SectionThree products={products} />
         <SectionFour products={products} />
         <SectionSix products={products} />
+      </>
+    );
+  };
+
+  return (
+    <>
+      <Card font={"'Poppins', sans-serif"} height={"100rem"} width={"100vw"}>
+        {/* {show ? <Navbar /> : null} */}
+        <Navbar />
+        <Card height={"100vh"} onClick={searchModeHandler}>
+          {searchMode ? <></> : rendered()}
+        </Card>
       </Card>
     </>
   );

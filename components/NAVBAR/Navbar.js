@@ -1,10 +1,29 @@
 import React from "react";
 import { Card } from "../UI/Card.styled";
-
+import { useState } from "react";
+import { useEffect } from "react";
 import SectionOne from "./SECTIONONE/SectionOne";
 import SectionTwo from "./SECTIONTWO/SectionTwo";
 
 const Navbar = () => {
+  const [show, setShow] = useState(true);
+  const [lastScroll, setLastScroll] = useState(0);
+  const controlBar = () => {
+    if (window.scrollY > lastScroll && window.scrollY > 60) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
+    setLastScroll(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlBar);
+    return () => {
+      window.removeEventListener("scroll", controlBar);
+    };
+  }, [lastScroll]);
+  console.log(show);
   return (
     <>
       <Card
@@ -16,8 +35,9 @@ const Navbar = () => {
         ovfy={"hidden"}
         ovfx={"hidden"}
         bg={"#2A2A36"}
-        ps={"sticky"}
-        pstp={"0rem"}
+        ps={"fixed"}
+        pstp={show ? "0rem" : "-10rem"}
+        tr={"600ms"}
         zindex={"10"}
         // bd={"1px solid red"}
       >

@@ -24,6 +24,7 @@ const ProductItem = ({ item, productItemProps }) => {
       height={"20rem"}
       br={"1rem"}
       mg={"1rem 0"}
+      tr={"3s"}
     >
       <Card
         mg={"auto"}
@@ -47,7 +48,12 @@ const ProductItem = ({ item, productItemProps }) => {
         <Card dp={"grid"} gridC={"2rem 2rem 2rem 2rem 2rem 2rem"}>
           {iconArray.map((item) => {
             return (
-              <Card ps={"relative"} width={"1.2rem"} height={"1.2rem"}>
+              <Card
+                key={Math.random()}
+                ps={"relative"}
+                width={"1.2rem"}
+                height={"1.2rem"}
+              >
                 <Image layout={"fill"} src={star} />
               </Card>
             );

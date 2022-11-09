@@ -10,7 +10,7 @@ import coffeeMaker from "../../IMAGES/coffeeMaker.svg";
 const SectionTwo = () => {
   const items = [
     {
-      id: 1,
+      id: 0,
       color: " #01C9A2 ",
       image: imac,
     },
@@ -21,12 +21,12 @@ const SectionTwo = () => {
     },
 
     {
-      id: 1,
+      id: 2,
       color: "  #FC9715 ",
       image: vaccumCleaner,
     },
     {
-      id: 1,
+      id: 3,
       color: "#1A7AEC",
       image: coffeeMaker,
     },
@@ -42,7 +42,7 @@ const SectionTwo = () => {
           gridjc={"space-between"}
         >
           {items.map((item) => {
-            return <CardItem item={item} />;
+            return <CardItem key={item.id} item={item} />;
           })}
         </Card>
       </Card>
