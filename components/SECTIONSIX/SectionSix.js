@@ -4,7 +4,6 @@ import { Card } from "../UI/Card.styled";
 import ProductList from "../PRODUCT/ProductList";
 import ItemGroupHeader from "../ItemGroupHeader";
 import { useSelector } from "react-redux";
-import { Item } from "semantic-ui-react";
 
 const SectionSix = ({ products }) => {
   const [filterState, setFilterState] = useState(true);

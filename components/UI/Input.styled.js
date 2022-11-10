@@ -50,4 +50,18 @@ export const InputCard = styled.input`
     height: ${(props) => props.hvheight};
     width: ${(props) => props.hvwidth};
   }
+  &:focus {
+    border: ${(props) => props.fbd};
+    top: ${(props) => props.fpstp};
+    right: ${(props) => props.fpsrt};
+    bottom: ${(props) => props.fpsbt};
+    left: ${(props) => props.fpslf};
+    color: ${(props) => props.fcl};
+    border: ${(props) => props.fbd};
+    background-color: ${(props) => props.fbg};
+    font-size: ${(props) => props.ffs};
+    height: ${(props) => props.fheight};
+    width: ${(props) => props.fwidth};
+    backdrop-filter: ${(props) => props.fbdft};
+  }
 `;

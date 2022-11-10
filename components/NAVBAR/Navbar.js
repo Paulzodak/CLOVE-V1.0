@@ -23,7 +23,7 @@ const Navbar = () => {
       window.removeEventListener("scroll", controlBar);
     };
   }, [lastScroll]);
-  console.log(show);
+
   return (
     <>
       <Card

@@ -11,7 +11,8 @@ import { useDetectScroll } from "@smakss/react-scroll-direction";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setSearchMode } from "../../components/redux/ui";
-
+import { CSSTransition, SwitchTransition } from "react-transition-group";
+import Search from "../../components/Search.js";
 const Index = () => {
   const [products, setProducts] = useState([]);
   const searchMode = useSelector((state) => state.ui.searchMode);
@@ -143,23 +144,32 @@ const Index = () => {
 
   const rendered = () => {
     return (
-      <>
+      <div>
         <SectionOne />
         <SectionTwo />
         <SectionThree products={products} />
         <SectionFour products={products} />
         <SectionSix products={products} />
-      </>
+      </div>
     );
   };
 
   return (
     <>
       <Card font={"'Poppins', sans-serif"} height={"100rem"} width={"100vw"}>
-        {/* {show ? <Navbar /> : null} */}
         <Navbar />
-        <Card height={"100vh"} onClick={searchModeHandler}>
-          {searchMode ? <></> : rendered()}
+        <Card height={"170rem"} onClick={searchModeHandler}>
+          <SwitchTransition>
+            <CSSTransition
+              key={searchMode}
+              addEndListener={(node, done) =>
+                node.addEventListener("transitionend", done, false)
+              }
+              classNames="fade"
+            >
+              {searchMode ? <Search products={products} /> : rendered()}
+            </CSSTransition>
+          </SwitchTransition>
         </Card>
       </Card>
     </>

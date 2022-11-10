@@ -1,8 +1,7 @@
 import React from "react";
 import { Card } from "../UI/Card.styled";
 import Image from "next/image";
-import laptop from "../../IMAGES/laptop.svg";
-import star from "../../IMAGES/star.svg";
+import star from "../../IMAGES/Star.svg";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Button } from "../UI/Button.styled";

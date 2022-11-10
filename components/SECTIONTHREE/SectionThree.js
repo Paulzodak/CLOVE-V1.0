@@ -26,7 +26,7 @@ const SectionThree = ({ products }) => {
       <Card
         pd={"1rem 0"}
         // bd={"1px solid red"}
-        // height={"30rem"}
+        ps={"relative"}
         mg={"1rem 2rem"}
       >
         <ItemGroupHeader productsListProps={productsListProps} />

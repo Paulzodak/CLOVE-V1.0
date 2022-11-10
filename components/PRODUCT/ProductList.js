@@ -2,7 +2,10 @@ import React from "react";
 import { Card } from "../UI/Card.styled";
 import ProductItem from "./ProductItem";
 // import products from "../../Products.json";
-const ProductList = ({ filter, productsListProps }) => {
+import { useSelector } from "react-redux";
+const ProductList = ({ search, productsListProps }) => {
+  const inputs = useSelector((state) => state.search.userInput);
+  console.log(inputs);
   const productItemProps = {
     style: productsListProps.style,
   };
@@ -12,7 +15,7 @@ const ProductList = ({ filter, productsListProps }) => {
       dp={"grid"}
       gridC={"15rem 15rem 15rem 15rem"}
       gridjc={"space-between"}
-      mg={"1rem 0"}
+      mg={search ? "8rem 0" : "1rem 0"}
       // bd={"1px solid red"}
     >
       {productsListProps.products.map((item) => {
