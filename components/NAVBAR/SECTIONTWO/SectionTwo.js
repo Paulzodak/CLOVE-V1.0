@@ -6,7 +6,11 @@ import Search from "../Search";
 import userIcon from "../../../IMAGES/ICONS/userIcon.svg";
 import cartIcon from "../../../IMAGES/ICONS/cartIcon.svg";
 import searchButton from "../../../IMAGES/ICONS/searchButton.svg";
+import { Button } from "../../UI/Button.styled";
+import { useSelector } from "react-redux";
 const SectionTwo = () => {
+  const styles = useSelector((state) => state.styles);
+  const orders = useSelector((state) => state.cart.cartItems);
   return (
     <>
       <Card pd={"0 3.7rem"}>
@@ -52,14 +56,9 @@ const SectionTwo = () => {
               <Image src={searchButton} layout={"fill"} objectFit={"contain"} />
             </Card>
           </Card>
-          {/* <Card bd={"1px solid red"}></Card> */}
-          {/* <Card bd={"1px solid red"}></Card> */}
-          {/* <Card bd={"1px solid red"}></Card>
-          <Card bd={"1px solid red"}></Card> */}
-          {/*  */}
+
           <Card
             bd={"0px solid red"}
-            // mg={"0 0 0 47%"}
             dp={"grid"}
             gridC={"65% 1% 34%"}
             width={"15rem"}
@@ -85,6 +84,18 @@ const SectionTwo = () => {
               <center>
                 <Card ps={"relative"} height={"1.5rem"} width={"1.5rem"}>
                   <Image src={cartIcon} layout={"fill"} objectFit={"contain"} />
+                  <Button
+                    ps="relative"
+                    pstp="0.7rem"
+                    pslf="0.6rem"
+                    bg={styles.colors.buttonBlue}
+                    cl="white"
+                    fs="0.7rem"
+                    bd="none"
+                    br="2rem"
+                  >
+                    {orders.length}
+                  </Button>
                 </Card>
               </center>
             </Card>

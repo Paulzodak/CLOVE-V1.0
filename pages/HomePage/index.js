@@ -158,7 +158,7 @@ const Index = () => {
     <>
       <Card font={"'Poppins', sans-serif"} height={"100rem"} width={"100vw"}>
         <Navbar />
-        <Card height={"170rem"} onClick={searchModeHandler}>
+        <Card>
           <SwitchTransition>
             <CSSTransition
               key={searchMode}

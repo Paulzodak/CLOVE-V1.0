@@ -5,12 +5,19 @@ import star from "../../IMAGES/Star.svg";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Button } from "../UI/Button.styled";
+import { useDispatch } from "react-redux";
+import { setCart } from "../redux/cart";
 
 const ProductItem = ({ item, productItemProps }) => {
   const [iconArray, setIconArray] = useState([]);
-  const temp = [];
+  const dispatch = useDispatch();
+  const itemOrderHandler = () => {
+    dispatch(setCart({ newOrder: item }));
+  };
+  console.log(item);
 
   // LOGIC FOR THE PRODUCT STARS
+  const temp = [];
   useEffect(() => {
     for (let i = 0; i < item.stars; i++) {
       temp.push("star");
@@ -72,6 +79,7 @@ const ProductItem = ({ item, productItemProps }) => {
             fs={"0.8rem"}
             float={"right"}
             pd={"0.4rem"}
+            onClick={itemOrderHandler}
           >
             Add To Cart
           </Button>

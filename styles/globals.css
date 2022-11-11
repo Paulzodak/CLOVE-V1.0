@@ -30,22 +30,22 @@ a {
 .fade-enter {
   /* opacity: 0; */
   position: relative;
-  transition: 800ms ease-in;
+  transition: 6000ms;
   right: -100%;
 }
 .fade-exit {
   position: relative;
-  transition: 800ms ease-out;
-  left: 0%;
+  transition: 6000ms;
+  left: -0%;
 }
 .fade-enter-active {
   position: relative;
-  transition: 800ms ease-in;
+  transition: 600ms;
   right: 0%;
 }
 .fade-exit-active {
   /* opacity: 0; */
   position: relative;
-  transition: 800ms ease-out;
+  transition: 600ms;
   left: -100%;
 }

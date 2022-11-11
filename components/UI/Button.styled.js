@@ -1,5 +1,6 @@
 import styled from "styled-components";
 export const Button = styled.button`
+  border-radius: ${(props) => props.br};
   float: ${(props) => props.float};
   font-weight: ${(props) => props.fw};
   border-radius: ${(props) => props.br};

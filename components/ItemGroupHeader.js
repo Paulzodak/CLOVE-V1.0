@@ -10,11 +10,11 @@ const ItemGroupHeader = ({ filter, setFilterState, productsListProps }) => {
       //   bd={"1px solid red"}
       //   height={"5rem"}
       dp={"grid"}
-      gridC={"1fr auto 6rem"}
+      gridC={"auto 4fr auto"}
     >
       <Card bd={"0px solid red"}>
         <Card fs={"1.2rem"} mg={"auto"}>
-          {productsListProps.header}
+          <b> {productsListProps.header}</b>
         </Card>
       </Card>
       <Card bd={"0px solid red"}>
@@ -23,10 +23,10 @@ const ItemGroupHeader = ({ filter, setFilterState, productsListProps }) => {
           ps={"relative"}
           pstp={"1rem"}
           width={"100%"}
-          // mg={"0rem 0.5rem"}
+          mg={"0rem 0.5rem 0 0.5rem"}
         ></Card>
       </Card>
-      <Card bd={"0px solid red"}>
+      <Card mg={"0 0 0 1rem"} bd={"0px solid red"}>
         {/* <center> */}
         <Button
           cl={productsListProps.style.colors.white}

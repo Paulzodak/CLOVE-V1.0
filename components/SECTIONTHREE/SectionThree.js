@@ -13,12 +13,15 @@ const BASEURL = "https://6350076278563c1d82b6dafc.mockapi.io/";
 const SectionThree = ({ products }) => {
   const styles = useSelector((state) => state.styles);
 
+  const [filterState, setFilterState] = useState(true);
+
   const filter = "item.stars > 4";
 
   const productsListProps = {
     products: products,
     style: styles,
     header: "Most Popular",
+    filterMessage: filterState ? "View All" : "Hide",
     filter: filter,
   };
   return (

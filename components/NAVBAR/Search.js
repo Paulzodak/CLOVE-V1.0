@@ -13,6 +13,9 @@ const Search = () => {
   const inputHandler = (e) => {
     dispatch(setUserInput({ userInput: e.target.value }));
   };
+  const blurHandler = (e) => {
+    dispatch(setSearchMode({ searchMode: false }));
+  };
   return (
     <InputCard
       className="NavInput"
@@ -30,6 +33,7 @@ const Search = () => {
       fbd={"none"}
       onFocus={focusHandler}
       onChange={inputHandler}
+      onBlur={blurHandler}
       value={inputs}
     ></InputCard>
   );
