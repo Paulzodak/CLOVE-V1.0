@@ -86,7 +86,7 @@ const Cart = () => {
               <Card>QUANTITY</Card>
               <Card>TOTAL</Card>
             </Card>
-            {items.map((item) => {
+            {cartItems.map((item) => {
               return <CartItem item={item} />;
             })}
           </Card>

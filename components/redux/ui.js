@@ -12,8 +12,9 @@ export const uiSlice = createSlice({
     },
     setShowCart: (state, action) => {
       state.showCart = action.payload.showCart;
+      console.log(state.showCart);
     },
   },
 });
-export const { setSearchMode } = uiSlice.actions;
+export const { setSearchMode, setShowCart } = uiSlice.actions;
 export default uiSlice.reducer;

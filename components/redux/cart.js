@@ -6,7 +6,15 @@ export const cartSlice = createSlice({
   },
   reducers: {
     setCart: (state, action) => {
-      state.cartItems.push(action.payload.newOrder);
+      //  CHECKS FOR DUPLICATE ORDERS
+      if (
+        state.cartItems.find((e) => e.name === action.payload.newOrder.name) ===
+        undefined
+      ) {
+        state.cartItems.push(action.payload.newOrder);
+      } else {
+        console.log("no");
+      }
     },
   },
 });

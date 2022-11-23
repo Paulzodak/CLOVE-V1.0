@@ -4,9 +4,11 @@ import styles from "../styles/Home.module.css";
 import camera from "../IMAGES/camera.svg";
 import { Card } from "../components/UI/Card.styled";
 import Cart from "../components/CART/Cart";
+import { useSelector } from "react-redux";
 
 import Index from "./HomePage";
 export default function Home() {
+  const { showCart } = useSelector((state) => state.ui);
   return (
     <>
       {/* <Card bg={"black"}> */}
@@ -23,8 +25,7 @@ export default function Home() {
         />
       </Head>
       <Index />
-      <Cart />
-      {/* </Card> */}
+      {showCart ? <Cart /> : <></>}
     </>
   );
 }

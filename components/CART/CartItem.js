@@ -22,7 +22,7 @@ const CartItem = ({ item }) => {
         height="100%"
         width="100%"
       >
-        <Image src={toaster} />
+        <Image height="100%" width="100%" src={item.src} />
       </Card>
       <Card mg="20% 0 0 0" fs="0.9rem">
         {item.name}
@@ -42,11 +42,13 @@ const CartItem = ({ item }) => {
           fs="1rem"
         >
           <Card bd="0px solid red">-</Card>
-          <Card bd="0px solid red">{item.quantity}</Card>
+          <Card bd="0px solid red">{1}</Card>
           <Card bd="0px solid red">+</Card>
         </Card>
       </Card>
-      <Card ta="center" pd="50% 0" bd="0px solid red">{`$${item.total}`}</Card>
+      <Card ta="center" pd="50% 0" bd="0px solid red">{`$${
+        item.price * 2
+      }`}</Card>
     </Card>
   );
 };

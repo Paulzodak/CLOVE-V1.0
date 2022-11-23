@@ -14,7 +14,7 @@ const ProductItem = ({ item, productItemProps }) => {
   const itemOrderHandler = () => {
     dispatch(setCart({ newOrder: item }));
   };
-  console.log(item);
+  // console.log(item);
 
   // LOGIC FOR THE PRODUCT STARS
   const temp = [];

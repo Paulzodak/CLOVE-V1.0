@@ -8,9 +8,15 @@ import cartIcon from "../../../IMAGES/ICONS/cartIcon.svg";
 import searchButton from "../../../IMAGES/ICONS/searchButton.svg";
 import { Button } from "../../UI/Button.styled";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setShowCart } from "../../redux/ui";
 const SectionTwo = () => {
+  const dispatch = useDispatch();
   const styles = useSelector((state) => state.styles);
   const orders = useSelector((state) => state.cart.cartItems);
+  const cartOpenHandler = () => {
+    dispatch(setShowCart({ showCart: true }));
+  };
   return (
     <>
       <Card pd={"0 3.7rem"}>
@@ -82,7 +88,12 @@ const SectionTwo = () => {
             </Card>
             <Card bd={"0px solid red"}>
               <center>
-                <Card ps={"relative"} height={"1.5rem"} width={"1.5rem"}>
+                <Card
+                  onClick={cartOpenHandler}
+                  ps={"relative"}
+                  height={"1.5rem"}
+                  width={"1.5rem"}
+                >
                   <Image src={cartIcon} layout={"fill"} objectFit={"contain"} />
                   <Button
                     ps="relative"
