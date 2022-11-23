@@ -1,5 +1,10 @@
 import styled from "styled-components";
 export const Card = styled.div`
+  min-width: ${(props) => props.miwidth};
+  max-width: ${(props) => props.mawidth};
+  min-height: ${(props) => props.miheight};
+  max-height: ${(props) => props.maheight};
+
   border-right: ${(props) => props.bdrt};
   align-content: ${(props) => props.gridac};
   column-gap: ${(props) => props.gridcgap};

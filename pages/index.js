@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import camera from "../IMAGES/camera.svg";
 import { Card } from "../components/UI/Card.styled";
+import Cart from "../components/CART/Cart";
 
 import Index from "./HomePage";
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         />
       </Head>
       <Index />
+      <Cart />
       {/* </Card> */}
     </>
   );

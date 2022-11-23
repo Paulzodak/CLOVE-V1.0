@@ -6,6 +6,8 @@ export const styleSlice = createSlice({
       buttonBlue: "#1A7AEC",
       white: "white",
       borderGrey: "#E5E5E5",
+      lightGrey: "rgb(246, 246, 246)",
+      darkGrey: " #6c6c6c",
     },
     fonts: {},
     icons: {},
