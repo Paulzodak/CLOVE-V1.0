@@ -71,7 +71,7 @@ const CartItem = ({ item }) => {
           </Card>
         </Card>
       </Card>
-      <Card ta="center" pd="50% 0" bd="0px solid red">{`$${total}`}</Card>
+      <Card ta="center" pd="50% 0" bd="0px solid red">{`$${item.total}`}</Card>
     </Card>
   );
 };

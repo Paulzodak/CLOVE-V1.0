@@ -59,7 +59,7 @@ const Cart = () => {
         height="30rem"
         width="45rem"
       >
-        <Card bg="black" height="3rem" cl="white" width="100%">
+        <Card bg="black" height="3.5rem" cl="white" width="100%">
           <center>
             <Card
               ps="relative"
