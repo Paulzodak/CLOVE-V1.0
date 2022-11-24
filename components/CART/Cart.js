@@ -10,7 +10,10 @@ import OrderSummary from "./OrderSummary";
 const Cart = () => {
   const styles = useSelector((state) => state.styles);
   const { cartItems } = useSelector((state) => state.cart);
+  const { total } = useSelector((state) => state.cart);
+  const { vat } = useSelector((state) => state.cart);
   console.log(cartItems);
+
   const items = [
     { name: "Sony Gamepad Gamepad", price: 300, quantity: 1, total: 300 },
     { name: "Sony Gamepad", price: 300, quantity: 1, total: 300 },
@@ -22,7 +25,7 @@ const Cart = () => {
   const OrderSummaryLabels = [
     {
       name: "Subtotal",
-      price: `$100`,
+      price: `$${total}`,
     },
     {
       name: "Shipping",
@@ -30,7 +33,7 @@ const Cart = () => {
     },
     {
       name: "VAT",
-      price: `$0.99`,
+      price: `$${vat}`,
     },
     {
       name: "Add Coupon code - ",
@@ -107,7 +110,7 @@ const Cart = () => {
               <hr />
               <Card pd="0 1rem" mg="1rem 0" dp="grid" gridC="80% 20%">
                 <Card>Total</Card>
-                <Card>$367</Card>
+                <Card>{`$${total}`}</Card>
               </Card>
             </Card>
             <Button fs="0.8rem" bd="none" width="100%" height="3rem">

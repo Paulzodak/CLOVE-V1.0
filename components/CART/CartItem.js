@@ -1,11 +1,32 @@
 import React from "react";
 import { Card } from "../UI/Card.styled";
 import { ImageCard } from "../UI/ImageCard.styled";
+import { useEffect } from "react";
 import Image from "next/image";
 import toaster from "../../IMAGES/IMAGES /bread-toaster.jpg";
 import { useSelector } from "react-redux";
+import { incrementQuantity } from "../redux/cart";
+import { decrementQuantity } from "../redux/cart";
+import { useDispatch } from "react-redux";
+import { setTotalForEach } from "../redux/cart";
+import { setTotal } from "../redux/cart";
 const CartItem = ({ item }) => {
+  const dispatch = useDispatch();
   const styles = useSelector((state) => state.styles);
+  const { total } = useSelector((state) => state.cart);
+  dispatch(setTotalForEach({ id: item.id }));
+  useEffect(() => {
+    dispatch(setTotal());
+  });
+
+  const decrementHandler = () => {
+    dispatch(decrementQuantity({ id: item.id }));
+    // dispatch(setTotal());
+  };
+  const incrementHandler = () => {
+    dispatch(incrementQuantity({ id: item.id }));
+    // dispatch(setTotal());
+  };
   return (
     <Card
       bdbm={`2px solid ${styles.colors.borderGrey}`}
@@ -41,14 +62,16 @@ const CartItem = ({ item }) => {
           ta="center"
           fs="1rem"
         >
-          <Card bd="0px solid red">-</Card>
-          <Card bd="0px solid red">{1}</Card>
-          <Card bd="0px solid red">+</Card>
+          <Card cursor="pointer" onClick={decrementHandler} bd="0px solid red">
+            -
+          </Card>
+          <Card bd="0px solid red">{item.quantity}</Card>
+          <Card cursor="pointer" onClick={incrementHandler} bd="0px solid red">
+            +
+          </Card>
         </Card>
       </Card>
-      <Card ta="center" pd="50% 0" bd="0px solid red">{`$${
-        item.price * 2
-      }`}</Card>
+      <Card ta="center" pd="50% 0" bd="0px solid red">{`$${total}`}</Card>
     </Card>
   );
 };

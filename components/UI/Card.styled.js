@@ -1,5 +1,6 @@
 import styled from "styled-components";
 export const Card = styled.div`
+  cursor: ${(props) => props.cursor};
   min-width: ${(props) => props.miwidth};
   max-width: ${(props) => props.mawidth};
   min-height: ${(props) => props.miheight};

@@ -21,6 +21,8 @@ const Index = () => {
   const searchModeHandler = () => {
     dispatch(setSearchMode({ searchMode: false }));
   };
+  const { total } = useSelector((state) => state.cart);
+  console.log(total);
   useEffect(() => {
     // axios.get(`${BASEURL}/Products`).then((res) => {
     //   setProducts(res.data);
@@ -34,6 +36,8 @@ const Index = () => {
         category: "Television",
         stars: 1,
         price: 550,
+        quantity: 1,
+        total: 0,
       },
       {
         id: 1,
@@ -42,6 +46,8 @@ const Index = () => {
         category: "Television",
         stars: 4,
         price: 500,
+        quantity: 1,
+        total: 0,
       },
       {
         id: 2,
@@ -50,6 +56,8 @@ const Index = () => {
         category: "Accesories",
         stars: 2,
         price: 150,
+        quantity: 1,
+        total: 0,
       },
       {
         id: 3,
@@ -58,6 +66,8 @@ const Index = () => {
         category: "Laptops & Tablets",
         stars: 4,
         price: 670,
+        quantity: 1,
+        total: 0,
       },
       {
         id: 4,
@@ -66,6 +76,8 @@ const Index = () => {
         category: "Accesories",
         stars: 4,
         price: 1200,
+        quantity: 1,
+        total: 0,
       },
       {
         id: 5,
@@ -74,6 +86,8 @@ const Index = () => {
         category: "Television",
         stars: 5,
         price: 500,
+        quantity: 1,
+        total: 0,
       },
       {
         id: 6,
@@ -82,6 +96,8 @@ const Index = () => {
         category: "Cars, Motorbikes & Industrial",
         stars: 5,
         price: 200,
+        quantity: 1,
+        total: 0,
       },
       {
         id: 7,
@@ -90,6 +106,8 @@ const Index = () => {
         category: "Smart Home",
         stars: 1,
         price: 300,
+        quantity: 1,
+        total: 0,
       },
       {
         id: 8,
@@ -98,6 +116,8 @@ const Index = () => {
         category: "Camera,Audio & Videos",
         stars: 3,
         price: 800,
+        quantity: 1,
+        total: 0,
       },
       {
         id: 9,
@@ -106,6 +126,8 @@ const Index = () => {
         category: "Smart Home",
         stars: 4,
         price: 150,
+        quantity: 1,
+        total: 0,
       },
       {
         id: 10,
@@ -114,6 +136,8 @@ const Index = () => {
         category: "Camera,Audio & Videos",
         stars: 1,
         price: 420,
+        quantity: 1,
+        total: 0,
       },
       {
         id: 11,
@@ -122,6 +146,8 @@ const Index = () => {
         category: "Laptops & Tablets",
         stars: 2,
         price: 999,
+        quantity: 1,
+        total: 0,
       },
       {
         id: 12,
@@ -130,6 +156,8 @@ const Index = () => {
         category: "Accesories",
         stars: 5,
         price: 1100,
+        quantity: 1,
+        total: 0,
       },
       {
         id: 13,
@@ -138,6 +166,8 @@ const Index = () => {
         category: "Smart Home",
         stars: 3,
         price: 860,
+        quantity: 1,
+        total: 0,
       },
     ]);
   }, []);
