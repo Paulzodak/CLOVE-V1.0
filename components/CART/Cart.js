@@ -108,9 +108,15 @@ const Cart = () => {
                 })}
               </Card>
               <hr />
-              <Card pd="0 1rem" mg="1rem 0" dp="grid" gridC="80% 20%">
+              <Card
+                fs="0.8rem"
+                pd="0 1rem"
+                mg="1rem 0"
+                dp="grid"
+                gridC="70% 30%"
+              >
                 <Card>Total</Card>
-                <Card>{`$${total}`}</Card>
+                <Card ta="center">{`$${total}`}</Card>
               </Card>
             </Card>
             <Button fs="0.8rem" bd="none" width="100%" height="3rem">
