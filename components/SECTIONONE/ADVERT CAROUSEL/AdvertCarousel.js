@@ -49,7 +49,7 @@ const AdvertCarousel = () => {
         </Card>
         <center>
           <Card bd={"0px solid green"} height={"17rem"} width={"17rem"}>
-            <Carousel controls={false} interval={1000}>
+            <Carousel indicators={false} controls={false} interval={1000}>
               <Carousel.Item>
                 <Card>
                   <Image
@@ -81,7 +81,7 @@ const AdvertCarousel = () => {
           </Card>
         </center>
       </Card>
-      <Card bg={"#F5F5F5"} br={"1rem"} bd={"0px solid yellow"}>
+      <Card bg={"#F5F5F5"} br={"1rem"} bd={"1px solid yellow"}>
         <Card
           dp={"grid"}
           // bd={"1px solid red"}

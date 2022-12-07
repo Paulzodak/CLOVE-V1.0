@@ -175,11 +175,11 @@ const Index = () => {
   const rendered = () => {
     return (
       <div>
-        <SectionOne />
+        {/* <SectionOne />
         <SectionTwo />
         <SectionThree products={products} />
         <SectionFour products={products} />
-        <SectionSix products={products} />
+        <SectionSix products={products} /> */}
       </div>
     );
   };

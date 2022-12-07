@@ -5,7 +5,7 @@ import ProductItem from "./ProductItem";
 import { useSelector } from "react-redux";
 const ProductList = ({ search, productsListProps }) => {
   const inputs = useSelector((state) => state.search.userInput);
-  console.log(inputs);
+  console.log();
   const productItemProps = {
     style: productsListProps.style,
   };
@@ -19,7 +19,7 @@ const ProductList = ({ search, productsListProps }) => {
       // bd={"1px solid red"}
     >
       {productsListProps.products.map((item) => {
-        if (eval(productsListProps.filter)) {
+        if (productsListProps.filter) {
           return (
             <ProductItem
               key={item.id}

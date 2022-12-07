@@ -4,6 +4,7 @@ import { Card } from "../UI/Card.styled";
 import Categories from "./CATEGORIES/Categories";
 import SpecialOffer from "./SPECIAL OFFER/SpecialOffer";
 import AdvertCarousel from "./ADVERT CAROUSEL/AdvertCarousel";
+import { CardLink } from "../UI/Link.styled";
 const SectionOne = () => {
   return (
     <Card
@@ -18,7 +19,9 @@ const SectionOne = () => {
       gridC={"auto auto auto"}
       gridjc={"space-between"}
     >
-      <Categories />
+      <CardLink hvcl="black" cl="none" href="/Categories">
+        <Categories />
+      </CardLink>
       <AdvertCarousel />
       <SpecialOffer />
     </Card>

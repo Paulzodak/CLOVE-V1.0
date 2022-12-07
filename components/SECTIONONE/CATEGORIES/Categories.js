@@ -2,6 +2,7 @@ import React from "react";
 import { Card } from "../../UI/Card.styled";
 import CategoryItem from "./CategoryItem";
 import arrow from "../../../IMAGES/ICONS/CATEGORIES ICONS/arrow.svg";
+import { CardLink } from "../../UI/Link.styled";
 
 // ICONS IMPORT
 import mouse from "../../../IMAGES/ICONS/CATEGORIES ICONS/mouse.svg";
