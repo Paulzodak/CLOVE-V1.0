@@ -7,7 +7,6 @@ import messageIcon from "../../../IMAGES/ICONS/messageIcon.svg";
 import dialerIcon from "../../../IMAGES/ICONS/dialerIcon.svg";
 import { CardSpan } from "../../UI/CardSpan.styled";
 import Image from "next/image";
-import { Item } from "semantic-ui-react";
 // ---------------STYLED COMPONENTS------------------------
 const Container = styled.div`
   display: grid;
