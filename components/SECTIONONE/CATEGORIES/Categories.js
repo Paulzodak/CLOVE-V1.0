@@ -14,7 +14,12 @@ import home from "../../../IMAGES/ICONS/CATEGORIES ICONS/home.svg";
 import watch from "../../../IMAGES/ICONS/CATEGORIES ICONS/watch.svg";
 import headphone from "../../../IMAGES/ICONS/CATEGORIES ICONS/headphone.svg";
 import glasses from "../../../IMAGES/ICONS/CATEGORIES ICONS/glasses.svg";
-
+import styled from "styled-components";
+const Container = styled.div`
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
 const Categories = () => {
   const categories = [
     { id: 0, icon: mouse, category: "Computer & Accesories", arrow: arrow },
@@ -35,20 +40,13 @@ const Categories = () => {
   ];
   // const rendered = categories.map((item)=)
   return (
-    <Card
-    // dp={"grid"}
-    // gridR={"auto auto auto auto auto auto auto auto auto auto"}
-    // gridac={"space-evenly"}
-
-    // width={"18rem"}
-    // bd={"1px solid red"}
-    >
+    <Container>
       <Card bd={"0px solid red"}>
         {categories.map((item) => {
           return <CategoryItem key={item.id} item={item} />;
         })}
       </Card>
-    </Card>
+    </Container>
   );
 };
 

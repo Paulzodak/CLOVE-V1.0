@@ -8,47 +8,120 @@ import { Button } from "../../UI/Button.styled";
 import truck from "../../../IMAGES/ICONS/truck.svg";
 import phone from "../../../IMAGES/ICONS/phone.svg";
 import piggy from "../../../IMAGES/ICONS/piggy.svg";
+import styled from "styled-components";
 
+const Container = styled.div`
+  display: grid;
+  position: relative;
+  grid-template-rows: 72% 23%;
+  /* border: 1px solid red; */
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  align-content: space-between;
+  @media (max-width: 900px) {
+    width: 90vw;
+  }
+  @media (max-width: 500px) {
+    width: 90vw;
+    height: 90%;
+  }
+`;
+const AdvertText = styled.div`
+  font-size: 2rem;
+  padding: 5rem 0 0 1rem;
+  /* border: 1px solid blue; */
+  color: white;
+  @media (max-width: 500px) {
+    font-size: 1.2rem;
+  }
+`;
+const ShopBtn = styled.button`
+  font-size: 1rem;
+  color: white;
+  padding: 0.3rem 0.5rem;
+  border-radius: 2rem;
+  background-color: black;
+  border: 1px solid white;
+  box-sizing: border-box;
+  @media (max-width: 500px) {
+    font-size: 0.6rem;
+  }
+`;
+const CarouselSection = styled.div`
+  height: 17rem;
+  /* border: 1px solid blue; */
+  width: 17rem;
+  @media (max-width: 500px) {
+    height: 10rem;
+    width: 10rem;
+    margin-top: 1.7rem;
+  }
+`;
+
+const FreeShippingContainer = styled.div`
+  border-right: 2px solid grey;
+`;
+const Icon = styled.div`
+  height: 2rem;
+  width: 2rem;
+  position: relative;
+  margin: auto;
+  @media (max-width: 500px) {
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+`;
+const OnlineSupportContainer = styled.div`
+  border-right: 2px solid grey;
+`;
+const TextHeader = styled.div`
+  font-size: 0.7rem;
+  @media (max-width: 500px) {
+    font-size: 0.55rem;
+  }
+`;
+const Text = styled.div`
+  margin: 0.2rem 0 0 0;
+  font-size: 0.6rem;
+  @media (max-width: 500px) {
+    font-size: 0.45rem;
+  }
+`;
+
+const DetailContainer = styled.div`
+  display: grid;
+  grid-template-columns: 3rem 6rem 3rem 6rem 3rem 6rem;
+  justify-content: space-between;
+  height: 2.5rem;
+  margin: 1.75rem 2rem 0 2rem;
+  @media (max-width: 500px) {
+    margin: 1.5rem 1rem 0 1rem;
+    grid-template-columns: 2rem 5rem 2rem 5rem 2rem 5rem;
+  }
+`;
 const AdvertCarousel = () => {
   return (
-    <Card
-      dp={"grid"}
-      gridR={"72% 23%"}
-      bg={"white"}
-      width={"30rem"}
-      height={"100%"}
-      bd={"0px solid red"}
-      gridac={"space-between"}
-    >
+    <Container>
       <Card
         br={"1rem"}
         // bd={"1px solid red"}
         bg={"black"}
+        width="inherit"
         // height={"10rem"}
         // width={"10rem"}
 
         dp={"grid"}
         gridC={"40% 60%"}
       >
-        <Card bd={"0px solid pink"}>
-          <Card fs={"2rem"} pd={"5rem 0 0 1rem"} cl={"white"}>
-            TV
-            <br />
-            Shop
-            <Button
-              fs={"1rem"}
-              cl={"white"}
-              pd={"0.3rem 0.5rem"}
-              br={"2rem"}
-              bg={"black"}
-              bd={"1px solid white"}
-            >
-              Shop By Category
-            </Button>
-          </Card>
-        </Card>
+        <AdvertText>
+          TV
+          <br />
+          Shop
+          <ShopBtn>Shop By Category</ShopBtn>
+        </AdvertText>
         <center>
-          <Card bd={"0px solid green"} height={"17rem"} width={"17rem"}>
+          <CarouselSection>
             <Carousel indicators={false} controls={false} interval={1000}>
               <Carousel.Item>
                 <Card>
@@ -78,76 +151,43 @@ const AdvertCarousel = () => {
                 </Card>
               </Carousel.Item>
             </Carousel>
-          </Card>
+          </CarouselSection>
         </center>
       </Card>
-      <Card bg={"#F5F5F5"} br={"1rem"} bd={"1px solid yellow"}>
-        <Card
-          dp={"grid"}
-          // bd={"1px solid red"}
-          // gridC={"10% 20%  10% 20%  10% 20%"}
-          gridC={"3rem 6rem 3rem 6rem 3rem 6rem"}
-          gridjc={"space-between"}
-          height={"2.5rem"}
-          mg={"1.75rem 2rem 0 2rem"}
-        >
-          <Card
-            height={"2rem"}
-            width={"2rem"}
-            ps={"relative"}
-            // bd={"1px solid red"}
-
-            mg={"auto"}
-          >
+      <Card width="inherit" bg={"#F5F5F5"} br={"1rem"} bd={"0px solid yellow"}>
+        <DetailContainer>
+          <Icon>
             <Image layout={"fill"} objectFit={"contain"} src={truck} />
-          </Card>
-          <Card bdrt={"2px solid grey"}>
-            <Card fs={"0.7rem"}>
+          </Icon>
+          <FreeShippingContainer>
+            <TextHeader>
               <b>Free Shipping </b>
-            </Card>
-            <Card mg={"0.2rem 0 0 0"} fs={"0.6rem"}>
-              On all Shopping
-            </Card>
-          </Card>
+            </TextHeader>
+            <Text>On all Shopping</Text>
+          </FreeShippingContainer>
 
-          <Card
-            height={"2rem"}
-            width={"2rem"}
-            ps={"relative"}
-            // bd={"1px solid red"}
-            mg={"auto"}
-          >
+          <Icon>
             <Image layout={"fill"} objectFit={"contain"} src={phone} />
-          </Card>
-          <Card bdrt={"2px solid grey"}>
-            <Card fs={"0.7rem"}>
+          </Icon>
+          <OnlineSupportContainer>
+            <TextHeader>
               <b>Online Support </b>
-            </Card>
-            <Card mg={"0.2rem 0 0 0"} fs={"0.6rem"}>
-              Technical 24/7
-            </Card>
-          </Card>
+            </TextHeader>
+            <Text>Technical 24/7</Text>
+          </OnlineSupportContainer>
 
-          <Card
-            height={"2rem"}
-            width={"2rem"}
-            ps={"relative"}
-            // bd={"1px solid red"}
-            mg={"auto"}
-          >
+          <Icon>
             <Image layout={"fill"} objectFit={"contain"} src={piggy} />
-          </Card>
+          </Icon>
           <Card>
-            <Card fs={"0.7rem"}>
+            <TextHeader>
               <b>Big Saving </b>
-            </Card>
-            <Card mg={"0.2rem 0 0 0"} fs={"0.6rem"}>
-              Weekend Sales
-            </Card>
+            </TextHeader>
+            <Text>Weekend Sales</Text>
           </Card>
-        </Card>
+        </DetailContainer>
       </Card>
-    </Card>
+    </Container>
   );
 };
 
