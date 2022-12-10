@@ -5,6 +5,12 @@ import gamePad from "../../../IMAGES/sonyGamePad.svg";
 import Image from "next/image";
 import { ImageCard } from "../../UI/ImageCard.styled";
 import LinearBar from "./LinearLoad";
+import styled from "styled-components";
+const Container = styled.div`
+  border: 1px solid grey;
+  height: 100%;
+  width: 90%;
+`;
 const SpecialOffer = () => {
   return (
     <Card width={"18rem"} bd={"0px solid red"}>
@@ -16,12 +22,7 @@ const SpecialOffer = () => {
         br={"1rem"}
         pd={"1rem"}
       >
-        <Card
-          // height={"2rem"}
-          // bd={"1px solid red"}
-          dp={"grid"}
-          gridC={"50% 50% "}
-        >
+        <Card dp={"grid"} gridC={"50% 50% "}>
           <Card fs={"0.8rem"}>
             <Card>Special</Card>
             <Card>OFFER</Card>

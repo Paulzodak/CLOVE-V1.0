@@ -175,11 +175,11 @@ const Index = () => {
   const rendered = () => {
     return (
       <div>
-        {/* <SectionOne />
-        <SectionTwo />
-        <SectionThree products={products} />
-        <SectionFour products={products} />
-        <SectionSix products={products} /> */}
+        {/* <SectionOne /> */}
+        {/* <SectionTwo /> */}
+        {/* <SectionThree products={products} /> */}
+        {/* <SectionFour products={products} /> */}
+        {/* <SectionSix products={products} /> */}
       </div>
     );
   };

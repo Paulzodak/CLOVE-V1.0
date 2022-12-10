@@ -10,6 +10,112 @@ import { Button } from "../../UI/Button.styled";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setShowCart } from "../../redux/ui";
+import styled from "styled-components";
+
+const Container = styled.section`
+  display: grid;
+  height: 100%;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between;
+  @media (max-width: 900px) {
+    grid-template-columns: auto 2fr;
+  }
+  @media (max-width: 450px) {
+    grid-template-columns: 1fr;
+    margin: auto;
+  }
+`;
+const ShopIcon = styled.div`
+  position: relative;
+  margin: 1rem 0 0 0;
+  height: 1.5rem;
+  width: 1.5rem;
+`;
+const ShopText = styled.div`
+  font-size: 0.8rem;
+  margin: 1.2rem 0 0 0;
+  color: white;
+`;
+const SearchContainer = styled.div`
+  position: relative;
+  width: 25rem;
+  /* width: 100%; */
+  @media (max-width: 900px) {
+    width: 17rem;
+  }
+  @media (max-width: 450px) {
+    width: 15rem;
+  }
+`;
+const SearchBtn = styled.div`
+  position: absolute;
+  top: -53%;
+  left: 70%;
+  width: 7rem;
+  height: 7rem;
+  transition: 0.3s;
+  &:hover {
+    height: 6.7rem;
+    width: 6.7rem;
+    top: -49%;
+  }
+  @media (max-width: 900px) {
+    left: 55%;
+  }
+  @media (max-width: 450px) {
+    left: 50%;
+  }
+`;
+const UserIcon = styled.div`
+  position: relative;
+  height: 1.5rem;
+  width: 1.5rem;
+`;
+const CartIconContainer = styled.div`
+  position: relative;
+  height: 1.5rem;
+  width: 1.5rem;
+`;
+const ShopByCategory = styled.div`
+  display: grid;
+  grid-template-columns: 20% 80%;
+  width: 10rem;
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+const LoginSignUp = styled.div`
+  font-size: 0.9rem;
+  color: white;
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+const Utility = styled.div`
+  display: grid;
+  grid-template-columns: 20% 80%;
+  /* border: 1px solid green; */
+
+  @media (max-width: 900px) {
+    grid-template-columns: 100%;
+  }
+`;
+const SubContainer = styled.div`
+  /* border: 2px solid red; */
+  display: grid;
+  grid-template-columns: 65% 1% 34%;
+  width: 15rem;
+  padding: 0.9rem 0 0 0;
+  @media (max-width: 900px) {
+    grid-template-columns: auto auto;
+    justify-content: space-around;
+    width: 100%;
+  }
+  @media (max-width: 450px) {
+    display: none;
+  }
+`;
+
 const SectionTwo = () => {
   const dispatch = useDispatch();
   const styles = useSelector((state) => state.styles);
@@ -19,81 +125,35 @@ const SectionTwo = () => {
   };
   return (
     <>
-      <Card pd={"0 3.7rem"}>
-        <Card
-          dp={"grid"}
-          height={"100%"}
-          gridC={"auto auto auto "}
-          gridjc={"space-between"}
-        >
-          {/*  */}
-          <Card
-            dp={"grid"}
-            gridC={"20% 80%"}
-            bd={"0px solid red"}
-            width={"10rem"}
-          >
-            <Card
-              mg={"1rem 0 0 0"}
-              ps={"relative"}
-              width={"1.5rem"}
-              height={"1.5rem"}
-            >
+      <Card bd="0px solid red" pd={"0 3.7rem"}>
+        <Container>
+          <ShopByCategory>
+            <ShopIcon>
               <Image src={menuIcon} layout={"fill"} objectFit={"contain"} />
-            </Card>
-            <Card fs={"0.8rem"} mg={"1.2rem 0 0 0"} cl={"white"}>
-              Shop By Category
-            </Card>
-          </Card>
-          {/*  */}
-          <Card ps={"relative"} width={"25rem"} bd={"0px solid red"}>
-            <Search />
-            <Card
-              ps={"absolute"}
-              pstp={"-53%"}
-              pslf={"70%"}
-              width={"7rem"}
-              height={"7rem"}
-              hvheight={"6.7rem"}
-              hvwidth={"6.7rem"}
-              hvpstp={"-49%"}
-              tr={"0.3s"}
-            >
-              <Image src={searchButton} layout={"fill"} objectFit={"contain"} />
-            </Card>
-          </Card>
+            </ShopIcon>
+            <ShopText>Shop By Category</ShopText>
+          </ShopByCategory>
 
-          <Card
-            bd={"0px solid red"}
-            dp={"grid"}
-            gridC={"65% 1% 34%"}
-            width={"15rem"}
-            pd={"0.9rem 0 0 0 "}
-          >
-            <Card bd={"0px solid red"} dp={"grid"} gridC={"20% 80%"}>
-              <Card
-                mg={"0rem 0 0 0"}
-                ps={"relative"}
-                height={"1.5rem"}
-                width={"1.5rem"}
-              >
+          <SearchContainer>
+            <Search />
+            <SearchBtn>
+              <Image src={searchButton} layout={"fill"} objectFit={"contain"} />
+            </SearchBtn>
+          </SearchContainer>
+
+          <SubContainer>
+            <Utility>
+              <UserIcon>
                 <Image src={userIcon} layout={"fill"} objectFit={"contain"} />
-              </Card>
-              <Card fs={"0.9rem"} cl={"white"}>
-                Login/Signup
-              </Card>
-            </Card>
-            <Card mg={"0rem 0 0 0"} cl={"white"} bd={"0px solid red"}>
+              </UserIcon>
+              <LoginSignUp>Login/Signup</LoginSignUp>
+            </Utility>
+            {/* <Card cl={"white"} bd={"0px solid red"}>
               |
-            </Card>
-            <Card bd={"0px solid red"}>
+            </Card> */}
+            <Card>
               <center>
-                <Card
-                  onClick={cartOpenHandler}
-                  ps={"relative"}
-                  height={"1.5rem"}
-                  width={"1.5rem"}
-                >
+                <CartIconContainer onClick={cartOpenHandler}>
                   <Image src={cartIcon} layout={"fill"} objectFit={"contain"} />
                   <Button
                     ps="relative"
@@ -107,11 +167,11 @@ const SectionTwo = () => {
                   >
                     {orders.length}
                   </Button>
-                </Card>
+                </CartIconContainer>
               </center>
             </Card>
-          </Card>
-        </Card>
+          </SubContainer>
+        </Container>
       </Card>
     </>
   );
