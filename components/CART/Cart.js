@@ -25,10 +25,12 @@ const Container = styled.div`
   /* height: 30rem; */
   width: 45rem;
   @media (max-width: 900px) {
+    margin: 15vh auto;
     width: 27rem;
   }
   @media (max-width: 500px) {
-    width: 18rem;
+    margin: 10vh auto;
+    width: 80%;
   }
 `;
 const ContentArea = styled.div`
@@ -50,7 +52,22 @@ const LabelContainer = styled.div`
   font-size: 0.8rem;
   color: ${(props) => props.cl};
   @media (max-width: 500px) {
+    grid-template-columns: 42% 15% 25% 10% 5%;
     font-size: 0.6rem;
+  }
+`;
+const CheckoutBtn = styled.button`
+  font-size: 0.8rem;
+  border: none;
+  background-color: black;
+  width: 100%;
+  height: 3rem;
+  color: white;
+  transition: 1s;
+  &:hover {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
   }
 `;
 const Cart = () => {
@@ -144,9 +161,7 @@ const Cart = () => {
                 <Card ta="center">{`$${total}`}</Card>
               </Card>
             </Card>
-            <Button fs="0.8rem" bd="none" width="100%" height="3rem">
-              CHECKOUT
-            </Button>
+            <CheckoutBtn>CHECKOUT</CheckoutBtn>
           </Card>
         </ContentArea>
       </Container>

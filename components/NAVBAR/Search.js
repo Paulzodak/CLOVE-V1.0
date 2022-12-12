@@ -19,6 +19,9 @@ const SearchInput = styled.input`
     color: white;
     border: none;
   }
+  @media (max-width: 500px) {
+    padding: 0 6rem 0 0.5rem;
+  }
 `;
 const Search = () => {
   const dispatch = useDispatch();
@@ -36,18 +39,7 @@ const Search = () => {
   return (
     <SearchInput
       className="NavInput"
-      height={"80%"}
-      mg={"1% 0%"}
-      width={"100%"}
-      bd={"none"}
-      bg={"#3D3D49"}
-      br={"2rem"}
       placeholder={"Type Here..."}
-      fs={"1rem"}
-      pd={"0 2rem "}
-      cl={"white"}
-      phcl={"white"}
-      fbd={"none"}
       onFocus={focusHandler}
       onChange={inputHandler}
       onBlur={blurHandler}

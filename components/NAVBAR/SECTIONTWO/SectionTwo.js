@@ -21,7 +21,7 @@ const Container = styled.section`
     grid-template-columns: auto 2fr;
   }
   @media (max-width: 450px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.2fr 1fr;
     margin: auto;
   }
 `;
@@ -44,7 +44,7 @@ const SearchContainer = styled.div`
     width: 17rem;
   }
   @media (max-width: 450px) {
-    width: 14rem;
+    width: 10rem;
   }
 `;
 const SearchBtn = styled.div`
@@ -63,7 +63,15 @@ const SearchBtn = styled.div`
     left: 55%;
   }
   @media (max-width: 450px) {
-    left: 50%;
+    left: 45%;
+    top: -41%;
+    width: 5rem;
+    height: 6rem;
+    &:hover {
+      height: 5.7rem;
+      width: 4.7rem;
+      top: -39%;
+    }
   }
 `;
 const UserIcon = styled.div`
