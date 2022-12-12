@@ -6,7 +6,53 @@ import { useSelector } from "react-redux";
 import { Button } from "../UI/Button.styled";
 
 import OrderSummary from "./OrderSummary";
+import styled from "styled-components";
 
+const BackdropContainer = styled.div`
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  position: fixed;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.512);
+`;
+const Container = styled.div`
+  overflow-y: hidden;
+  overflow-x: hidden;
+  border-radius: 1rem;
+  margin: 20vh auto;
+  background-color: white;
+  /* height: 30rem; */
+  width: 45rem;
+  @media (max-width: 900px) {
+    width: 27rem;
+  }
+  @media (max-width: 500px) {
+    width: 18rem;
+  }
+`;
+const ContentArea = styled.div`
+  display: grid;
+  overflow-y: scroll;
+  grid-template-columns: 65% 35%;
+  /* border: 1px solid red; */
+  overflow: scroll;
+  height: 30rem;
+  @media (max-width: 900px) {
+    grid-template-columns: 100%;
+    grid-template-rows: 50%;
+  }
+`;
+const LabelContainer = styled.div`
+  border-bottom: ${(props) => props.bdbm};
+  display: grid;
+  grid-template-columns: 45% 15% 20% 10% 7%;
+  font-size: 0.8rem;
+  color: ${(props) => props.cl};
+  @media (max-width: 500px) {
+    font-size: 0.6rem;
+  }
+`;
 const Cart = () => {
   const styles = useSelector((state) => state.styles);
   const { cartItems } = useSelector((state) => state.cart);
@@ -41,24 +87,8 @@ const Cart = () => {
     },
   ];
   return (
-    <Card
-      height="100vh"
-      width="100vw"
-      zindex="10"
-      ps="fixed"
-      bg="rgba(0, 0, 0, 0.512)"
-      //   bdft="blur(1px)"
-      pstp="0rem"
-    >
-      <Card
-        ovfy="hidden"
-        ovfx="hidden"
-        br="1rem"
-        mg="20vh auto"
-        bg="white"
-        height="30rem"
-        width="45rem"
-      >
+    <BackdropContainer>
+      <Container>
         <Card bg="black" height="3.5rem" cl="white" width="100%">
           <center>
             <Card
@@ -73,22 +103,17 @@ const Cart = () => {
             <CartIcon height="2rem" width="2rem" />
           </center>
         </Card>
-        <Card dp="grid" gridC="65% 35%">
-          <Card ovfy="scroll" height="27rem" bd="0px solid red" pd="1rem">
-            <Card
+        <ContentArea>
+          <Card ovfy="scroll" bd="0px solid red" pd="1rem">
+            <LabelContainer
               bdbm={`2px solid ${styles.colors.borderGrey}`}
-              //   bd="0px solid red"
-              dp="grid"
-              gridC="40% 10% 20% 10% 7%"
-              gridjc="space-between"
-              fs="0.8rem"
               cl={styles.colors.darkGrey}
             >
               <Card>PRODUCT</Card>
               <Card>PRICE</Card>
               <Card>QUANTITY</Card>
               <Card>TOTAL</Card>
-            </Card>
+            </LabelContainer>
             {cartItems.map((item) => {
               return <CartItem item={item} />;
             })}
@@ -123,9 +148,9 @@ const Cart = () => {
               CHECKOUT
             </Button>
           </Card>
-        </Card>
-      </Card>
-    </Card>
+        </ContentArea>
+      </Container>
+    </BackdropContainer>
   );
 };
 

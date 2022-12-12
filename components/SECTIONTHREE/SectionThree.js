@@ -8,7 +8,12 @@ import ProductList from "../PRODUCT/ProductList";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-
+import styled from "styled-components";
+const Container = styled.div`
+  padding: 1rem 0;
+  position: relative;
+  margin: 1rem 2rem;
+`;
 const BASEURL = "https://6350076278563c1d82b6dafc.mockapi.io/";
 const SectionThree = ({ products }) => {
   const styles = useSelector((state) => state.styles);
@@ -26,15 +31,10 @@ const SectionThree = ({ products }) => {
   };
   return (
     <section>
-      <Card
-        pd={"1rem 0"}
-        // bd={"1px solid red"}
-        ps={"relative"}
-        mg={"1rem 2rem"}
-      >
+      <Container>
         <ItemGroupHeader productsListProps={productsListProps} />
         <ProductList productsListProps={productsListProps} />
-      </Card>
+      </Container>
     </section>
   );
 };

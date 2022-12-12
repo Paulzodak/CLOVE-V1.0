@@ -41,11 +41,13 @@ const Categories = () => {
   // const rendered = categories.map((item)=)
   return (
     <Container>
-      <Card bd={"0px solid red"}>
-        {categories.map((item) => {
-          return <CategoryItem key={item.id} item={item} />;
-        })}
-      </Card>
+      <CardLink hvcl="black" cl="none" href="/Categories">
+        <Card bd={"0px solid red"}>
+          {categories.map((item) => {
+            return <CategoryItem key={item.id} item={item} />;
+          })}
+        </Card>
+      </CardLink>
     </Container>
   );
 };

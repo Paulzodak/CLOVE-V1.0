@@ -7,6 +7,17 @@ import { useEffect } from "react";
 import { Button } from "../UI/Button.styled";
 import { useDispatch } from "react-redux";
 import { setCart } from "../redux/cart";
+import styled from "styled-components";
+const Container = styled.div`
+  border: ${(props) => props.bd};
+  height: 20rem;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  transition: 3s;
+  @media (max-width: 500px) {
+    min-width: 15rem;
+  }
+`;
 
 const ProductItem = ({ item, productItemProps }) => {
   const [iconArray, setIconArray] = useState([]);
@@ -25,19 +36,15 @@ const ProductItem = ({ item, productItemProps }) => {
     setIconArray(temp);
   }, []);
   return (
-    <Card
-      bd={`2px solid ${productItemProps.style.colors.borderGrey}`}
-      height={"20rem"}
-      br={"1rem"}
-      mg={"1rem 0"}
-      tr={"3s"}
-    >
+    <Container bd={`2px solid ${productItemProps.style.colors.borderGrey}`}>
       <Card
         mg={"auto"}
         // bd={"1px solid red"}
         ps={"relative"}
         height={"11rem"}
         width={"11rem"}
+        // height="50%"
+        // width="50%"
       >
         <Image
           // loader={"j2e2ji2e"}
@@ -85,7 +92,7 @@ const ProductItem = ({ item, productItemProps }) => {
           </Button>
         </Card>
       </Card>
-    </Card>
+    </Container>
   );
 };
 

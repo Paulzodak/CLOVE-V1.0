@@ -32,9 +32,9 @@ const Container = styled.div`
 const SectionOne = () => {
   return (
     <Container>
-      <CardLink hvcl="black" cl="none" href="/Categories">
-        <Categories />
-      </CardLink>
+      {/* <CardLink hvcl="black" cl="none" href="/Categories"> */}
+      <Categories />
+      {/* </CardLink> */}
       <AdvertCarousel />
       <SpecialOffer />
     </Container>

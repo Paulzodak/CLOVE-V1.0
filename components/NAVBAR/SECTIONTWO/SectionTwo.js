@@ -21,7 +21,7 @@ const Container = styled.section`
     grid-template-columns: auto 2fr;
   }
   @media (max-width: 450px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     margin: auto;
   }
 `;
@@ -44,7 +44,7 @@ const SearchContainer = styled.div`
     width: 17rem;
   }
   @media (max-width: 450px) {
-    width: 15rem;
+    width: 14rem;
   }
 `;
 const SearchBtn = styled.div`
@@ -112,7 +112,7 @@ const SubContainer = styled.div`
     width: 100%;
   }
   @media (max-width: 450px) {
-    display: none;
+    grid-template-columns: auto auto;
   }
 `;
 

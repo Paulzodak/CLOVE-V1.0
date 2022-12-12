@@ -177,9 +177,9 @@ const Index = () => {
       <div>
         <SectionOne />
         <SectionTwo />
-        {/* <SectionThree products={products} /> */}
-        {/* <SectionFour products={products} /> */}
-        {/* <SectionSix products={products} /> */}
+        <SectionThree products={products} />
+        <SectionFour products={products} />
+        <SectionSix products={products} />
       </div>
     );
   };
