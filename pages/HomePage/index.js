@@ -176,7 +176,7 @@ const Index = () => {
     return (
       <div>
         <SectionOne />
-        {/* <SectionTwo /> */}
+        <SectionTwo />
         {/* <SectionThree products={products} /> */}
         {/* <SectionFour products={products} /> */}
         {/* <SectionSix products={products} /> */}
